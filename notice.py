@@ -10,7 +10,7 @@ TARGET_URLS = {
     "Upbit": "https://upbit.com/service_center/notice",
     "Korbit": "https://exchange.korbit.co.kr/notice/"
 }
-KEYWORDS = ["Bitcoin", "Ethereum", "Polygon", "Avalanche", "XRP", "USDC", "Solana", "BITCOIN", "ETHEREUM", "POLYGON", "AVALANCHE", "SOLANA", "XRP"]
+KEYWORDS = ["Bitcoin", "Ethereum", "Polygon", "Avalanche", "XRP", "USDC", "Solana", "BITCOIN", "ETHEREUM", "POLYGON", "AVALANCHE", "SOLANA", "XRP", "비트코인", "이더리움", "아발란체", "폴리곤", "솔라나"]
 DB_FILE = "notified_list.txt"
 
 def load_notified_list():
@@ -73,11 +73,12 @@ def send_slack(msg):
     except: pass
 
 if __name__ == "__main__":
-    print(f"🚀 시스템 시작: {datetime.now().strftime('%H:%M:%S')}")
-    # 시작하자마자 파일 삭제해서 깨끗하게 테스트하려면 아래 주석 해제 (선택사항)
-    # if os.path.exists(DB_FILE): os.remove(DB_FILE)
+    print(f"🚀 시스템 체크 시작: {datetime.now().strftime('%H:%M:%S')}")
+    check_notices()
+    # while True와 time.sleep은 이제 필요 없으므로 삭제하거나 주석 처리
+    print("✅ 체크 완료 후 종료")
     
     check_notices()
     while True:
-        time.sleep(3600)
+        time.sleep(300)
         check_notices()
