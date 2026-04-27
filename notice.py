@@ -79,5 +79,5 @@ if __name__ == "__main__":
     
     check_notices()
     while True:
-        time.sleep(300)
+        time.sleep(3600)
         check_notices()
