@@ -63,9 +63,9 @@ def check_notices():
             print(f"🔺 {name} 에러 발생: {e}")
 
     no_alert_id = f"{now.strftime('%Y%m%d')}_NO_ALERTS"
-    if not any_keyword_found_today and no_alert_id not in notified_list:
-        send_slack(f"✅ [{now.strftime('%Y-%m-%d')}] 현재까지 신규 알람이 없습니다.")
-        save_notified_id(no_alert_id)
+    #if not any_keyword_found_today and no_alert_id not in notified_list:
+    #    send_slack(f"✅ [{now.strftime('%Y-%m-%d')}] 현재까지 신규 알람이 없습니다.")
+    #    save_notified_id(no_alert_id)
 
 def send_slack(msg):
     try:
