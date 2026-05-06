@@ -1,4 +1,4 @@
-name: Crypto Notice Bot
+name: Crypto_Notice_Bot
 
 on:
   schedule:
