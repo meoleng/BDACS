@@ -1,8 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import time
 import os
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 # 1. 설정 정보
 SLACK_URL = os.environ.get("SLACK_URL")
@@ -12,6 +11,9 @@ TARGET_URLS = {
 }
 KEYWORDS = ["Bitcoin", "Ethereum", "Polygon", "Avalanche", "XRP", "USDC", "Solana", "BITCOIN", "ETHEREUM", "POLYGON", "AVALANCHE", "SOLANA", "XRP", "비트코인", "이더리움", "아발란체", "폴리곤", "솔라나"]
 DB_FILE = "notified_list.txt"
+
+# 🌟 한국 시간(KST) 설정 (GitHub Actions 서버 시간 오차 해결)
+KST = timezone(timedelta(hours=9))
 
 def load_notified_list():
     if not os.path.exists(DB_FILE): return set()
@@ -23,27 +25,22 @@ def save_notified_id(msg_id):
         f.write(msg_id + "\n")
 
 def check_notices():
-    # 최대한 일반 사용자의 브라우저인 것처럼 보이도록 구성
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        'Origin': 'https://coinone.co.kr',
-        'Referer': 'https://coinone.co.kr/'
     }
     notified_list = load_notified_list()
-    now = datetime.now()
-    # 다양한 날짜 형식 대응
-    today_formats = [now.strftime("%Y.%m.%d"), now.strftime("%Y-%m-%d"), now.strftime("%m.%d")]
+    now = datetime.now(KST) # 한국 시간 적용
     
+    today_formats = [now.strftime("%Y.%m.%d"), now.strftime("%Y-%m-%d"), now.strftime("%m.%d")]
     any_keyword_found_today = False 
     
     for name, url in TARGET_URLS.items():
         print(f"🔍 {name} 체크 중...")
         try:
-            # 코인원의 경우 POST 요청이 필요할 수도 있으나 우선 GET으로 시도
             response = requests.get(url, headers=headers, timeout=10)
             
             if response.status_code != 200:
-                print(f"❌ {name} 접속 실패: {response.status_code} (URL 확인 필요)")
+                print(f"❌ {name} 접속 실패: {response.status_code}")
                 continue
 
             page_text = response.text
@@ -62,6 +59,7 @@ def check_notices():
         except Exception as e:
             print(f"🔺 {name} 에러 발생: {e}")
 
+    # 🌟 주석 해제 완료: 키워드가 하나도 없을 경우 알림 발송
     no_alert_id = f"{now.strftime('%Y%m%d')}_NO_ALERTS"
     if not any_keyword_found_today and no_alert_id not in notified_list:
         send_slack(f"✅ [{now.strftime('%Y-%m-%d')}] 현재까지 신규 알람이 없습니다.")
@@ -69,16 +67,18 @@ def check_notices():
 
 def send_slack(msg):
     try:
+        # SLACK_URL이 설정되어 있지 않을 경우를 대비한 방어 로직
+        if not SLACK_URL:
+            print("❌ 슬랙 URL이 환경 변수에 설정되어 있지 않습니다.")
+            return
         requests.post(SLACK_URL, json={"text": msg})
-    except: pass
+    except Exception as e: 
+        print(f"❌ 슬랙 발송 에러: {e}")
 
 if __name__ == "__main__":
-    print(f"🚀 시스템 체크 시작: {datetime.now().strftime('%H:%M:%S')}")
-    check_notices()
-    # while True와 time.sleep은 이제 필요 없으므로 삭제하거나 주석 처리
-    print("✅ 체크 완료 후 종료")
+    print(f"🚀 시스템 체크 시작: {datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S')}")
     
+    # 딱 한 번만 실행되도록 수정 (while True 삭제)
     check_notices()
-    while True:
-        time.sleep(300)
-        check_notices()
+    
+    print("✅ 체크 완료 후 깔끔하게 종료!")
