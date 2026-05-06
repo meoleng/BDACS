@@ -1,20 +1,19 @@
-name: Crypto_Notice_Bot
+name: Crypto Notice Bot
 
 on:
   schedule:
-    # 매 10분마다 실행
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-   steps:
+    steps:
       - name: 코드 가져오기
-        uses: actions/checkout@v4  # 🌟 v4로 변경
+        uses: actions/checkout@v4
 
       - name: 파이썬 설정
-        uses: actions/setup-python@v5 # 🌟 v5로 변경
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
