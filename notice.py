@@ -10,7 +10,8 @@ SLACK_URL = os.environ.get("SLACK_URL")
 TARGET_URLS = {
     "Upbit": "https://upbit.com/service_center/notice",
     "Korbit": "https://exchange.korbit.co.kr/notice/",
-    "https://feed.bithumb.com/notice?category=7&page=1"
+    "https://feed.bithumb.com/notice?category=7&page=1",
+    "https://coinone.co.kr/info/notice/?category=%EC%9E%85%EC%B6%9C%EA%B8%88",
     }
 
 KEYWORDS = ["Bitcoin", "Ethereum", "Polygon", "Avalanche", "XRP", "USDC", "Solana", "비트코인", "이더리움", "아발란체", "폴리곤", "솔라나"]
