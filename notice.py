@@ -10,7 +10,6 @@ SLACK_URL = os.environ.get("SLACK_URL")
 TARGET_URLS = {
     "Upbit": "https://upbit.com/service_center/notice",
     "Korbit": "https://exchange.korbit.co.kr/notice/",
-    "https://coinone.co.kr/info/notice",
     "https://feed.bithumb.com/notice?category=7&page=1"
 }
 
