@@ -58,3 +58,5 @@
 20260608_coinone_비트코인
 20260608_coinone_이더리움
 20260609_NO_ALERTS
+20260610_coinone_비트코인
+20260610_coinone_이더리움
