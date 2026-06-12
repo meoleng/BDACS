@@ -62,3 +62,5 @@
 20260610_coinone_이더리움
 20260611_NO_ALERTS
 20260612_NO_ALERTS
+20260612_coinone_비트코인
+20260612_coinone_이더리움
