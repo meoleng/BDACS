@@ -86,3 +86,7 @@
 20260623_coinone_이더리움
 20260623_coinone_폴리곤
 20260624_NO_ALERTS
+20260624_coinone_Polygon
+20260624_coinone_비트코인
+20260624_coinone_이더리움
+20260624_coinone_폴리곤
