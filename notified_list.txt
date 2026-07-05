@@ -124,3 +124,7 @@
 20260703_coinone_폴리곤
 20260704_NO_ALERTS
 20260705_NO_ALERTS
+20260705_coinone_Polygon
+20260705_coinone_비트코인
+20260705_coinone_이더리움
+20260705_coinone_폴리곤
