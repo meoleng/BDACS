@@ -160,3 +160,7 @@
 20260720_coinone_비트코인
 20260720_coinone_이더리움
 20260721_NO_ALERTS
+20260721_coinone_Polygon
+20260721_coinone_비트코인
+20260721_coinone_이더리움
+20260721_coinone_폴리곤
