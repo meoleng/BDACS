@@ -236,3 +236,4 @@
 20260813_coinone_폴리곤
 20260813_coinone_USDC
 20260813_coinone_Bitcoin
+20260814_NO_ALERTS
