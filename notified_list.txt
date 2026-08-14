@@ -237,3 +237,7 @@
 20260813_coinone_USDC
 20260813_coinone_Bitcoin
 20260814_NO_ALERTS
+20260814_coinone_Polygon
+20260814_coinone_비트코인
+20260814_coinone_이더리움
+20260814_coinone_폴리곤
