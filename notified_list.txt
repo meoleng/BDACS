@@ -255,3 +255,4 @@
 20260819_NO_ALERTS
 20260819_coinone_비트코인
 20260819_coinone_이더리움
+20260819_coinone_USDC
