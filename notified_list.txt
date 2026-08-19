@@ -253,3 +253,5 @@
 20260818_coinone_솔라나
 20260818_coinone_Bitcoin
 20260819_NO_ALERTS
+20260819_coinone_비트코인
+20260819_coinone_이더리움
