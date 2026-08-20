@@ -260,3 +260,5 @@
 20260820_coinone_USDC
 20260820_coinone_비트코인
 20260820_coinone_이더리움
+20260821_coinone_비트코인
+20260821_coinone_이더리움
