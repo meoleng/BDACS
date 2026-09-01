@@ -288,3 +288,4 @@
 20260831_coinone_USDC
 20260901_coinone_비트코인
 20260901_coinone_이더리움
+20260902_NO_ALERTS
