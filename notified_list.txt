@@ -308,3 +308,4 @@
 20260908_NO_ALERTS
 20260908_coinone_비트코인
 20260908_coinone_이더리움
+20260908_coinone_Ethereum
