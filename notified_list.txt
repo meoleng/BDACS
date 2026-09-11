@@ -318,3 +318,5 @@
 20260911_coinone_Ethereum
 20260911_coinone_비트코인
 20260911_coinone_이더리움
+20260912_coinone_비트코인
+20260912_coinone_이더리움
