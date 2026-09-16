@@ -331,3 +331,4 @@
 20260916_coinone_비트코인
 20260916_coinone_이더리움
 20260916_coinone_아발란체
+20260916_coinone_Bitcoin
