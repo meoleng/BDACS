@@ -337,3 +337,6 @@
 20260917_coinone_이더리움
 20260917_coinone_아발란체
 20260918_NO_ALERTS
+20260918_coinone_비트코인
+20260918_coinone_이더리움
+20260918_coinone_아발란체
