@@ -374,3 +374,4 @@
 20261001_coinone_비트코인
 20261001_coinone_이더리움
 20261001_coinone_Polygon
+20261002_NO_ALERTS
