@@ -427,3 +427,4 @@
 20261020_coinone_비트코인
 20261020_coinone_이더리움
 20261020_coinone_Solana
+20261021_NO_ALERTS
