@@ -432,3 +432,6 @@
 20261021_coinone_비트코인
 20261021_coinone_이더리움
 20261022_NO_ALERTS
+20261022_coinone_Solana
+20261022_coinone_비트코인
+20261022_coinone_이더리움
